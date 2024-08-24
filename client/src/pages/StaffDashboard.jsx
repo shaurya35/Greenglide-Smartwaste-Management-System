@@ -82,7 +82,7 @@ const StaffDashboard = () => {
           className="map"
         />
         <div className="map_data">
-          <div className="data_total sora">Total Dustbins Collected: {totalDustbins}/9</div>
+          <div className="data_total sora">Total Trash Collected: {totalDustbins}/9</div>
           <div className="data_sub sora">
             Employee Info:
             <ul>

@@ -6,6 +6,7 @@ import UserAuth from "./pages/UserAuth";
 import EmployeeAuth from "./pages/EmployeeAuth";
 import StaffAuth from "./pages/StaffAuth";
 import StaffDashboard from "./pages/StaffDashboard";
+import EmployeeDashboard from "./pages/EmployeeDashboard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/auth/employee/login" element={<EmployeeAuth />} />
           <Route path="/auth/staff/login" element={<StaffAuth />} />
           <Route path="/staff/dashboard" element={<StaffDashboard />} />
+          <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
         </Routes>
       </BrowserRouter>
     </>
