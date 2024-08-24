@@ -1,0 +1,53 @@
+
+.marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.d_main{
+  height: 100vh;
+  /* width: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+}
+
+.data_total{
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  padding-bottom: 20px;
+  /* background-color: red; */
+}
+
+.map_data{
+  padding-left: 40px;
+}
+
+.data_sub{
+  color: var(--text);
+  font-size: 30px;
+  /* background-color: green; */
+  text-align: center;
+}
+
+.sub_cat{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white);
+  padding: 20px;
+  border: 2px solid var(--white);
+  border-radius: 2rem;
+  /* background-color: red; */
+  margin: 2rem;
+}

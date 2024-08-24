@@ -1,7 +1,6 @@
 const Staff = require("../models/StaffModel.js");
 const Attendance = require("../models/AttendanceModel.js")
 const Dustbin = require('../models/DustbinModel.js'); 
-const mongoose = require("mongoose");
 
 const getEmployeeInfo = async (req, res) => {
     try {
