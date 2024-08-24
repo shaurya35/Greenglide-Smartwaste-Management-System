@@ -4,7 +4,9 @@
   "description": "Welcome to GreenGlide-EcoTrack, an innovative web application designed to tackle the inefficiencies of urban waste management. Developed by the BitMaker from Institute of Technical Education and Research, this project aims to enhance waste tracking, segregation, and management through cutting-edge technology.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/shaurya35/GreenGlide-SmartWaste-Management-System/issues"
   },
-  "homepage": "https://github.com/shaurya35/GreenGlide-SmartWaste-Management-System#readme"
+  "homepage": "https://github.com/shaurya35/GreenGlide-SmartWaste-Management-System#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.4",
+    "nodemon": "^3.1.4"
+  }
 }
