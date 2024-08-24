@@ -14,6 +14,7 @@ app.use((req, res, next) => {
 });
 
 const userAuthRoutes = require("./routes/userAuthRoutes.js");
+const EmployeeRoutes = require("./routes/employeeRoutes.js");
 
 // Base route
 app.get("/", (req, res) => {
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth/user", userAuthRoutes);
 app.use("/api/auth/employee", userAuthRoutes);
 app.use("/api/auth/staff", userAuthRoutes);
+app.use("/api/emp/:empId/dashboard", EmployeeRoutes);
+
 
 mongoose.connect("mongodb://localhost:27017/dustbinAttendance");
 
