@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {
     markAttendance
-} = require("../controllers/employeeControllers");
+} = require("../controllers/employeeController");
 
 router.post("/",markAttendance);
 
