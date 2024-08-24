@@ -105,3 +105,9 @@
 .popup_close:hover {
   background-color: #d32f2f;
 }
+
+@media (max-width: 600px) {
+  .navbar_inner {
+    width: 85vw;
+  }
+}

@@ -21,7 +21,7 @@ export default function Navbar() {
           </div>
           <div className="btn sora">
             <button className="navbar_button" onClick={togglePopup}>
-              Register
+              Get Started
             </button>
           </div>
         </div>
