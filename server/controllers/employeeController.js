@@ -1,4 +1,5 @@
-const Attendance = require("../models/AttendanceModel.js")
+const Attendance = require("../models/AttendanceModel.js");
+const Dustbin = require("../models/DustbinModel.js"); // Adjust the path as necessary
 
 const markAttendance = async (req, res) => {
     const { dustbinId, workerId } = req.body;
@@ -8,11 +9,13 @@ const markAttendance = async (req, res) => {
     }
 
     const currentDate = new Date();
-    const istDate = new Date(currentDate.getTime() + (5.5 * 60 * 60 * 1000));
+    const istDate = new Date(currentDate.getTime() + (5.5 * 60 * 60 * 1000)); // Adjust to IST
     const dateStr = istDate.toISOString().split('T')[0];
     const currentTime = istDate;
 
     try {
+        
+        // Find or create the attendance record
         let attendance = await Attendance.findOne({
             workerId,
             date: dateStr
@@ -37,7 +40,17 @@ const markAttendance = async (req, res) => {
             await newAttendance.save();
             res.status(200).send('Attendance marked successfully');
         }
+
+        // Update dustbin color to 'green'
+        await Dustbin.updateOne(
+            { dustbinId },
+            { $set: { color: 'green' } }
+        );
+
+        
+
     } catch (error) {
+        console.error('Error marking attendance:', error);
         res.status(500).send('Error marking attendance');
     }
 };

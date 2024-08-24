@@ -4,8 +4,7 @@ const Dustbin = require('../models/DustbinModel.js');
 
 const getEmployeeInfo = async (req, res) => {
     try {
-        const currentDate = new Date().toISOString().split('T')[0];
-        const attendances = await Attendance.find({ date: currentDate });
+        const attendances = await Attendance.find();
 
         const employeeInfo = attendances.map(attendance => [
             attendance.workerId,
@@ -21,9 +20,8 @@ const getEmployeeInfo = async (req, res) => {
 
 const getTotalEmployeeInfo = async (req, res) => {
     try {
-        const currentDate = new Date().toISOString().split('T')[0];
 
-        const attendances = await Attendance.find({ date: currentDate });
+        const attendances = await Attendance.find();
 
         let totalDustbinCount = 0;
         attendances.forEach(attendance => {

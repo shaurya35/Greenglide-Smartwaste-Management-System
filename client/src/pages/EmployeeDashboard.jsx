@@ -1,47 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { Html5QrcodeScanner } from 'html5-qrcode';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Html5QrcodeScanner, Html5QrcodeScanType } from "html5-qrcode"; // Ensure correct import
+import { useNavigate } from "react-router-dom";
+import "../styles/EmployeeDashboard.css";
 
 const EmployeeDashboard = () => {
-  const [result, setResult] = useState('');
-  const empId = 'worker123';  
-  const navigate = useNavigate(); // Initialize the navigate function
+  const [result, setResult] = useState("");
+  const empId = "worker123";
+  const navigate = useNavigate();
 
   useEffect(() => {
+    let config = {
+      fps: 50,
+      qrbox: { width: 200, height: 150 },
+      rememberLastUsedCamera: true,
+      supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA], 
+    };
+
     const html5QrcodeScanner = new Html5QrcodeScanner(
-      "reader", { fps: 10, qrbox: 250 }
+      "reader",
+      config,
+      false
     );
 
     const onScanSuccess = (qrCodeMessage) => {
       html5QrcodeScanner.clear().then(() => {
         console.log("QR code scanner stopped.");
-      }).catch(error => {
+      }).catch((error) => {
         console.error("Failed to clear QR code scanner:", error);
       });
 
       fetch('/api/emp/${empId}/dashboard', {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           dustbinId: qrCodeMessage,
-          workerId: empId
+          workerId: empId,
+        }),
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          setResult(data);
+          setTimeout(() => {
+            navigate("/auth/employee/login");
+          }, 2000);
         })
-      })
-      .then(response => response.text())
-      .then(data => {
-        setResult(data);
-
-        // Redirect after 2 seconds to give time for the user to see the result
-        setTimeout(() => {
-          navigate('/auth/employee/login');
-        }, 2000);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        restartScanner();
-      });
+        .catch((error) => {
+          console.error("Error:", error);
+          restartScanner();
+        });
     };
 
     const onScanFailure = (error) => {
@@ -55,17 +63,26 @@ const EmployeeDashboard = () => {
     html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
     return () => {
-      // Cleanup the scanner on component unmount
-      html5QrcodeScanner.clear().catch(error => console.error('Failed to stop scanner:', error));
+      html5QrcodeScanner.clear().catch((error) =>
+        console.error("Failed to stop scanner:", error)
+      );
     };
   }, [empId, navigate]);
 
   return (
-    <div>
-      <h1>Scan QR Code to Mark Attendance</h1>
-      <div id="reader" style={{ width: '300px', height: '300px' }}></div>
+    <main className="qr">
+      <h1 className="sora qr_heading">Scan QR Code to Mark </h1>
+      <div
+        id="reader"
+        style={{
+          width: "360px",
+          height: "350px",
+          marginTop: "20px",
+          backgroundColor: "var(--text)"
+        }}
+      ></div>
       <div id="result">{result}</div>
-    </div>
+    </main>
   );
 };
 
