@@ -1,3 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sora{
+    font-family: "Sora", Sans-serif; 
+}
+
+.outfit{
+    font-family: "Outfit", Sans-serif; 
+}
+
+:root{
+    --green: #016A70;
+    --white: #FFFFFF;
+    --text: #FFFFDD;
+}
