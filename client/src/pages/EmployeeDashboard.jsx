@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useNavigate } from 'react-router-dom';
 
 const EmployeeDashboard = () => {
   const [result, setResult] = useState('');
-  const empId = 'worker123';  // You can dynamically set this as needed
+  const empId = 'worker123';  
+  const navigate = useNavigate(); // Initialize the navigate function
 
   useEffect(() => {
     const html5QrcodeScanner = new Html5QrcodeScanner(
@@ -17,7 +19,7 @@ const EmployeeDashboard = () => {
         console.error("Failed to clear QR code scanner:", error);
       });
 
-      fetch(`/api/emp/${empId}/dashboard`, {
+      fetch('/api/emp/${empId}/dashboard', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -30,7 +32,11 @@ const EmployeeDashboard = () => {
       .then(response => response.text())
       .then(data => {
         setResult(data);
-        // Remove the redirection after 2 seconds or perform any other action
+
+        // Redirect after 2 seconds to give time for the user to see the result
+        setTimeout(() => {
+          navigate('/auth/employee/login');
+        }, 2000);
       })
       .catch(error => {
         console.error('Error:', error);
@@ -39,7 +45,7 @@ const EmployeeDashboard = () => {
     };
 
     const onScanFailure = (error) => {
-      console.warn(`QR code scan error: ${error}`);
+      console.warn('QR code scan error: ${error}');
     };
 
     const restartScanner = () => {
@@ -52,7 +58,7 @@ const EmployeeDashboard = () => {
       // Cleanup the scanner on component unmount
       html5QrcodeScanner.clear().catch(error => console.error('Failed to stop scanner:', error));
     };
-  }, [empId]);
+  }, [empId, navigate]);
 
   return (
     <div>
