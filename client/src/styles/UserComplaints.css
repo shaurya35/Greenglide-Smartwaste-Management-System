@@ -1,0 +1,48 @@
+
+
+.upload-complaints-container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 60px auto; /* Center the container with top margin */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+  }
+  
+  .upload-complaints-title {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .uploaded-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .no-image-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .upload-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .upload-link:hover {
+    background-color: #218838;
+  }
+  

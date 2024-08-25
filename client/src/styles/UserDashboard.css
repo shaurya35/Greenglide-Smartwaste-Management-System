@@ -1,0 +1,82 @@
+/* UserDashboard.css */
+
+.user-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px; /* Reduced width for a smaller layout */
+    margin: 40px auto 20px; /* Added top margin for gap, kept existing auto centering and bottom margin */
+    background-color: var(--green);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 1.75rem; /* Slightly smaller font size */
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .video {
+    width: 320px; /* Reduced width */
+    height: 240px; /* Reduced height */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .capture-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .capture-button:hover {
+    background-color: #218838;
+  }
+  
+  .upload-section {
+    margin-top: 20px;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem; /* Slightly smaller font size */
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .file-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .image-preview {
+    text-align: center;
+  }
+  
+  .image-title {
+    font-size: 1.15rem; /* Slightly smaller font size */
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .uploaded-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+  }
+  
