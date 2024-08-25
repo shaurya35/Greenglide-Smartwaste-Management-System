@@ -29,7 +29,7 @@ const EmployeeDashboard = () => {
         console.error("Failed to clear QR code scanner:", error);
       });
 
-      fetch(`/api/emp/${empId}/dashboard`, {
+      fetch('/api/emp/${empId}/dashboard', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const EmployeeDashboard = () => {
     };
 
     const onScanFailure = (error) => {
-      console.warn(`QR code scan error: ${error}`);
+      console.warn('QR code scan error: ${error}');
     };
 
     const restartScanner = () => {
