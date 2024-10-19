@@ -27,7 +27,7 @@ Welcome to GreenGlide-EcoTrack, an innovative web application designed to tackle
 
 ## Dependencies
 
-- Express
+- Express, React
 - Git
 - Github
 
