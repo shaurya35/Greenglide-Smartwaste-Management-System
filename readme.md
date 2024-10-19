@@ -1,6 +1,6 @@
-# Greenglide-SmartWaste-Management-System
+# GreenGlide-SmartWaste-System
 
-Greenglide is a modern and responsive waste management system built with Next.js, designed to streamline waste management processes. It allows users to track waste, manage disposal schedules, and monitor recycling efforts with ease.
+Welcome to GreenGlide-EcoTrack, an innovative web application designed to tackle the inefficiencies of urban waste management. Developed by the BitMaker from Institute of Technical Education and Research, this project aims to enhance waste tracking, segregation, and management through cutting-edge technology.
 
 ## Table of Contents
 
@@ -8,7 +8,8 @@ Greenglide is a modern and responsive waste management system built with Next.js
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Git Setup](#Git-Setup)
-- [Setup](#Setup)
+- [Client Setup](#Client-Setup)
+- [Server Setup](#Server-Setup)
 - [Usage](#usage)
 - [Contributors](#contributors)
 
@@ -18,29 +19,30 @@ Greenglide is a modern and responsive waste management system built with Next.js
 
 ## Features
 
-- **Smart Waste Tracking**: Monitor and track different types of waste with ease.
-- **Disposal Scheduling**: Set up and manage waste disposal schedules with notifications.
-- **Recycling Insights**: Get insights into recycling data and sustainability reports.
-- **Responsive Design**: Optimized for all devices including desktops, tablets, and mobile phones.
-- **Contact Form**: Allows users to send queries or issues related to the platform using Nodemailer.
+- Smart Waste Tracking: Monitor and track different types of waste with ease.
+- Disposal Scheduling: Set up and manage waste disposal schedules with notifications.
+- Recycling Insights: Get insights into recycling data and sustainability reports.
+- Responsive Design: Optimized for all devices including desktops, tablets, and mobile phones.
+- Contact Form: Allows users to send queries or issues related to the platform using Nodemailer.
 
 ## Dependencies
 
-- Node, React
-- Nodemailer
-- Tailwind CSS
+- Express
+- Git
+- Github
 
 ## Git-Setup
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/shaurya35/Greenglide-Smartwaste-Management-System
-cd Greenglide-Smartwaste-Management-System
+git clone https://github.com/shaurya35/GreenGlide-SmartWaste-System
+cd GreenGlide-SmartWaste-System
 ```
-## Setup
+## Client Setup
 
-Redirect to the Client:
+Redirect to client:
+
 ```bash
 cd client
 ```
@@ -54,8 +56,10 @@ Run client Interface:
 ```bash
 npm run dev
 ```
+## Server Setup
 
-Redirect to the Server:
+Redirect to server:
+
 ```bash
 cd server
 ```
@@ -65,16 +69,17 @@ Install the dependencies:
 npm install
 ```
 
-Run server Interface:
-```bash
-npm run dev
-```
-
 Create a .env file:
 ```bash
+PORT=
+MONGO_URI=
 JWT_SECRET=
 ```
 
+4. Run Server:
+```bash
+npm run dev
+```
 ## Usage
 
 Access the app in your web browser at `http://localhost:5173/`.
